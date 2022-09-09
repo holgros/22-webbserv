@@ -1,0 +1,14 @@
+Sverige;Stockholm
+Finland;Helsingfors
+Danmark;Köpenhamn
+Norge;Oslo
+Island;Reykjavik
+Estland;Tallinn
+Lettland;Riga
+Litauen;Vilnius
+Tyskland;Berlin
+Ryssland;Moskva
+Polen;Warszawa
+Frankrike;Paris
+Kina;Peking
+Irland;Dublin
