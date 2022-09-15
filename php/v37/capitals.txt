@@ -1,0 +1,8 @@
+Sverige;Stockholm
+Finland;Helsingfors
+Danmark;Köpenhamn
+Norge;Oslo
+Island;Reykjavik
+Estland;Tallinn
+Lettland;Riga
+Litauen;Vilnius
