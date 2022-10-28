@@ -1,0 +1,1 @@
+alert("Hejsan från externt klientsidesskript! Observera att denna js-fil ligger i mappen 'publik'.");
