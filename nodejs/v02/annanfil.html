@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undersida</title>
+    <script src="klientskript.js"></script>
+</head>
+<body>
+    <h1>Välkommen till undersidan!</h1>
+    <p>Denna sida har en bild och lite externt JavaScript.</p>
+    <img src="holger.jpg">
+    <p>Observera anropet <code>app.use(express.static("filer"));</code> på servern! Utan detta hittar inte klienten de länkade filerna.</p>
+    <p>Observera även URL:en <code>localhost:3000/undersida</code> i adressfältet! Detta trots att html-filen heter "annanfil.html".</p>
+    <p>Vidare anges mappen "filer" inte explicit i src-attributen; man skriver alltså <code>src="klientskript.js"</code> istället för <code>src="/filer/klientskript.js"</code> och motsvarande för bildfilen.</p>
+</body>
+</html>
