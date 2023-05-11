@@ -51,3 +51,37 @@ app.post("/login", function(req, res) {
         }
     });
 });
+
+app.get("/users", function(req, res) {
+    let authHeader = req.headers['authorization']
+    if (authHeader === undefined) {
+        // skicka lämplig HTTP-status om auth-header saknas, en “400 någonting”
+        res.sendStatus(400);    // "Bad request"
+        return;
+    }
+    let token = authHeader.slice(7) // tar bort "BEARER " från headern.
+    // nu finns den inskickade token i variabeln token
+    console.log(token);
+    
+    // avkoda token
+    let decoded;
+    try {
+        decoded = jwt.verify(token, "EnHemlighetSomIngenKanGissaXyz123%&/")
+    } catch (err) {
+        console.log(err) //Logga felet, för felsökning på servern.
+        res.status(401).send("Invalid auth token");
+        return;
+    }
+    
+    //Här kan man göra något bra med den info som finns i decoded...
+    console.log(decoded);
+    console.log("Tjena " + decoded.name + " " + decoded.lastname);
+    // ... men just nu nöjer vi oss bara att läsa från databasen.
+    let sql = "SELECT * FROM users";    // ÄNDRA TILL NAMN PÅ ER EGEN TABELL (om den heter något annat än "users")
+    console.log(sql);
+    // skicka query till databasen
+    con.query(sql, function(err, result, fields) {
+        res.send(result);
+    });
+    
+});
